@@ -14,8 +14,9 @@
     <h3>Proyectos Apoyados</h3>
     
     <ul>
+    @foreach (var proj in ViewBag.projects) {
         <li><img src="http://placehold.it/250x200" /></li>
-        <li><img src="http://placehold.it/250x200" /></li>
+    }
     </ul>
 </section>
 
@@ -23,7 +24,9 @@
     <h3>Donaciones</h3>
 
     <ul>
+    @foreach (var don in ViewBag.donations) {
         <li><img src="http://placehold.it/250x200" /></li>
+    }
     </ul>
 </section>
 
