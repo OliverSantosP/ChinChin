@@ -1,4 +1,4 @@
-﻿
+﻿@model chinchini.Models.ApplicationUser
 @{
     ViewBag.Title = "Details";
 }
@@ -6,7 +6,7 @@
 <section>
     <img src="http://placehold.it/250x200" />
 
-    <h2>Don Ramon</h2>
+    <h2>@Html.DisplayFor(x => x.Name)</h2>
     <h4>La vecindad del Chavo, Mexico DF</h4>
 </section>
 
@@ -31,7 +31,7 @@
     <h3>Feedback</h3>
 
     <ul>
-        <li><img src="http://placehold.it/250x200" /></li>
+        <li><img src="http://placehold.it/250x200" /><div>Gracias Don Ramon por apoyar mi proyecto!</div></li>
         <li><img src="http://placehold.it/250x200" /></li>
     </ul>
 </section>

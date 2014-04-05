@@ -19,7 +19,11 @@ namespace chinchini.Controllers
         // GET: /User/donramon
         public ActionResult Details(string id)
         {
-            return View();
+            // Get User profile info
+            var user = new Models.ApplicationUser();
+            user.Name = "Don Ramon";
+
+            return View(user);
         }
 	}
 }
