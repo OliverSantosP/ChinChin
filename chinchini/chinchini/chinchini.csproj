@@ -177,13 +177,42 @@
     <Compile Include="Migrations\201404051754475_Project-Pitch-LoanEntities.Designer.cs">
       <DependentUpon>201404051754475_Project-Pitch-LoanEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404051848574_PaymentEntity.cs" />
+    <Compile Include="Migrations\201404051848574_PaymentEntity.Designer.cs">
+      <DependentUpon>201404051848574_PaymentEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404051853082_PaymentTransactionEntity.cs" />
+    <Compile Include="Migrations\201404051853082_PaymentTransactionEntity.Designer.cs">
+      <DependentUpon>201404051853082_PaymentTransactionEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404051902215_PaymentDetailEntity.cs" />
+    <Compile Include="Migrations\201404051902215_PaymentDetailEntity.Designer.cs">
+      <DependentUpon>201404051902215_PaymentDetailEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404051932109_AddPaymentDetail.cs" />
+    <Compile Include="Migrations\201404051932109_AddPaymentDetail.Designer.cs">
+      <DependentUpon>201404051932109_AddPaymentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404051946151_AddLend.cs" />
+    <Compile Include="Migrations\201404051946151_AddLend.Designer.cs">
+      <DependentUpon>201404051946151_AddLend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404051946556_AddPaymentMethod.cs" />
+    <Compile Include="Migrations\201404051946556_AddPaymentMethod.Designer.cs">
+      <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lend.cs" />
     <Compile Include="Models\Loan.cs" />
     <Compile Include="Models\LoanType.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentDetail.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
+    <Compile Include="Models\PaymentTransaction.cs" />
     <Compile Include="Models\Pitch.cs" />
     <Compile Include="Models\PitchComment.cs" />
     <Compile Include="Models\PitchGallery.cs" />
@@ -197,7 +226,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Views\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -260,6 +289,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404051754475_Project-Pitch-LoanEntities.resx">
       <DependentUpon>201404051754475_Project-Pitch-LoanEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051848574_PaymentEntity.resx">
+      <DependentUpon>201404051848574_PaymentEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051853082_PaymentTransactionEntity.resx">
+      <DependentUpon>201404051853082_PaymentTransactionEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051902215_PaymentDetailEntity.resx">
+      <DependentUpon>201404051902215_PaymentDetailEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051932109_AddPaymentDetail.resx">
+      <DependentUpon>201404051932109_AddPaymentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051946151_AddLend.resx">
+      <DependentUpon>201404051946151_AddLend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404051946556_AddPaymentMethod.resx">
+      <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

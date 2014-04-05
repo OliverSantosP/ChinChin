@@ -29,6 +29,7 @@ namespace chinchini.Models
         public virtual LoanType LoanType { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+        public virtual List<Payment> Payments { get; set; }
 
         
     }
