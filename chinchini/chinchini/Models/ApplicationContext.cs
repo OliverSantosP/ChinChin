@@ -21,6 +21,9 @@ namespace chinchini.Models
         public DbSet<Donation> Donation { get; set; }
         public DbSet<Loan> Loan { get; set; }
         public DbSet<LoanType> LoanType { get; set; }
+        public DbSet<Lend> Lend { get; set; }
+        public DbSet<PaymentMethod> PaymentMethod { get; set; }
+
 
     }
 }
