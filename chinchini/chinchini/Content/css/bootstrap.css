@@ -276,7 +276,7 @@ body {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #ffffff;
   background-color: #ffffff;
 }
 input,
@@ -750,6 +750,7 @@ pre code {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+    background: #007fff;
   }
 }
 .container-fluid {
