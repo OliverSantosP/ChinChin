@@ -26,6 +26,15 @@ namespace chinchini.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+#if DEBUG
+            var userManager = new Microsoft.AspNet.Identity.UserManager<Models.ApplicationUser>(new Microsoft.AspNet.Identity.EntityFramework.UserStore<Models.ApplicationUser>(new Models.ApplicationDbContext()))
+
+            var testUser = new Models.ApplicationUser { Name = "Don Ramon", LastName = "Perez", Email = "ramon.perez@gmail.com" };
+            //testUser.Logins.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin { UserId = "donramon" });
+            
+            var result = userManager.CreateAsync(testUser, "donramon");
+#endif
         }
     }
 }
