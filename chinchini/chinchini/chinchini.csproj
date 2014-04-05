@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201404051946556_AddPaymentMethod.Designer.cs">
       <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404052043487_AddMoreEntities.cs" />
+    <Compile Include="Migrations\201404052043487_AddMoreEntities.Designer.cs">
+      <DependentUpon>201404052043487_AddMoreEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404051946556_AddPaymentMethod.resx">
       <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404052043487_AddMoreEntities.resx">
+      <DependentUpon>201404052043487_AddMoreEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
