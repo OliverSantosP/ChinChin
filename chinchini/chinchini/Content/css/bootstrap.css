@@ -7294,8 +7294,10 @@ img.resize2 {
 }
 
 .projectprice {
-    padding: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
     color: #ffffff;
+    font-size:30px;
 }
 
 .projecttitle {
@@ -7307,6 +7309,11 @@ img.resize2 {
 .projectuser {
     padding-left: 25px;
     color: #ffffff;
+}
+
+.projectprogress{
+    padding-left:25px;
+    padding-right:25px;
 }
 
 .encapsulate

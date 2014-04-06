@@ -29,19 +29,27 @@
                     @Html.DisplayFor(x => x.Pitch.Body)
                 </span>
             </div>
-
-            <div class="projectdescription">
+            @{float PercentageTotal = chinchini.Models.Project.GetPercentage(Model.ProjectID);}
+            <div class="projectprogress">
                 <div class="progressbig">
-                    <div class="progress-bar progress-bar-success" style="width:40%"></div>
+                    <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
                 </div>
             </div>
 
             <div class="projectprice">
                 <div class="pull-right">
                     <span>
-                        RD$ @Html.DisplayFor(x => x.Amount)
+                        RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
                     </span>
                 </div>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Button</button>
+                </span>
             </div>
 
             @foreach (var item in Model.Pitch.PitchGallery)

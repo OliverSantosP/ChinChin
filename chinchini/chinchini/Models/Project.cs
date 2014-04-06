@@ -42,17 +42,34 @@ namespace chinchini.Models
         public static float GetLendTotal(int Id)
         {
             var db = new Models.ApplicationDbContext();
-            float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
-            return LendTotal;
+            try
+            {
+                float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
+                return LendTotal;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
         }
 
         public static float GetPercentage(int Id)
         {
             var db = new Models.ApplicationDbContext();
-            float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
-            float ProjectAmmount = db.Project.Find(Id).Amount;
-            float PercentageTotal = LendTotal * 100 / ProjectAmmount;
-            return PercentageTotal;
+            try
+            {
+                float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
+                float ProjectAmmount = db.Project.Find(Id).Amount;
+                float PercentageTotal = LendTotal * 100 / ProjectAmmount;
+                return PercentageTotal;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+            
         }
     }
 
