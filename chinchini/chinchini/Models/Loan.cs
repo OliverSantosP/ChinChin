@@ -21,7 +21,7 @@ namespace chinchini.Models
         public Byte[] LastUpdatedDate { get; set; }
 
 
-        public int? StatusID { get; set; }
+        public int StatusID { get; set; }
         public virtual Status Status { get; set; }
 
         public int LoanTypeID { get; set; }
