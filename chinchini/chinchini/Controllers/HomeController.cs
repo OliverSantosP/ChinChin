@@ -1,6 +1,8 @@
 ﻿using chinchini.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -120,6 +122,26 @@ namespace chinchini.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        private void MigrateAndSeedDbIfSchemaIsOutdated()
+        {
+            // Disable initializer.
+            Database.SetInitializer<ApplicationDbContext>(null);
+
+            // Make sure database exists.
+            using (var db = new ApplicationDbContext())
+            {
+                db.Database.Initialize(false);
+            }
+
+            var migrator = new DbMigrator(new Migrations.Configuration());
+
+            if (migrator.GetPendingMigrations().Any())
+            {
+                // Run migrations and seed.
+                migrator.Update();
+            }
         }
     }
 }
