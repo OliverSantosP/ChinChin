@@ -2504,8 +2504,7 @@ select[multiple].input-lg {
 
 .btn-default {
     color: #ffffff;
-    background-color: #222222;
-    border-color: #222222;
+    background-color: #006ddb;
 }
 
     .btn-default:hover,
