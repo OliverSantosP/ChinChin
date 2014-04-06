@@ -37,6 +37,15 @@ namespace chinchini.Controllers
             return View(project);
         }
 
+        //POST: /Project/Lend
+        [HttpPost, ActionName("Lend")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Lend(int? id)
+        {
+            string ProjectIdTest = ViewBag.ProjectID;
+            return View();
+        }
+
         // GET: /Project/Create
         public ActionResult Create()
         {
