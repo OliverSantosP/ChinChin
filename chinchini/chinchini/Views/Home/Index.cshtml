@@ -47,18 +47,21 @@
                 <div class="box">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize">
-                            <div class="boxpad">
+                            <a href="@Url.Action("Details","Project",new {id = 1})">
+                                <img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize">
+                            </a>
                                 <div class="boxpad">
-                                    <p class="example-title">Triciclo para Jaime</p>
+                                    <div class="boxpad">
+                                        <p class="example-title">Triciclo para Jaime</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="descripcion">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" style="width:20%"></div>
+                                <div class="descripcion">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" style="width:20%"></div>
+                                    </div>
+                                    RD$ 2,000 de RD$ 10,000
                                 </div>
-                                RD$ 2,000 de RD$ 10,000
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -99,5 +102,18 @@
         <h2>El regalo de dar</h2>
         <p>Puedes ver diferentes proyectos y donar al que mas te interese. Cada donacion queda registrada a tu perfil y puedes darle seguimiento.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Leer mas &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Consigue tu Chin</h2>
+        <p>
+            Emprende tu propio negocio, adquiriendo los prestamos más atractivos del mercado, dirigidos especialmente para micro-empresarios como tu!
+        </p>
+        @if (!Request.IsAuthenticated) {
+        <p>@Html.ActionLink("Registrate", "Register", new { controller = "Account" }, new { @class = "btn btn-default" })</p>
+        }else
+        {
+        <p>@Html.ActionLink("Agrupate", "Index", new { controller = "Group" }, new { @class = "btn btn-default" })</p>
+        }
+
     </div>
 </div>

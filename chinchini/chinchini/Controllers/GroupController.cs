@@ -23,6 +23,21 @@ namespace chinchini.Controllers
             return View(db.Group.Include("UserGroups").ToList());
         }
 
+
+
+        [HttpGet]
+        public ActionResult Users(int id)
+        {
+
+            ViewBag.GroupName = db.Group.FirstOrDefault(x => x.GroupID == id).Name;
+            var userGrups = db.UserGroup.Where(x => x.GroupID == id);
+            
+
+            var users = userGrups.Select(x=>x.User);
+
+            return View("Users",users);
+        }
+
         [HttpPost]
         public ActionResult Join(int id)
         {

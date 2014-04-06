@@ -1,0 +1,33 @@
+﻿@model IEnumerable<chinchini.Models.ApplicationUser>
+
+
+<h2>Grupo</h2>
+<h3>@ViewBag.GroupName</h3>
+
+<table class="table col-lg-12">
+    <tr>
+        <th></th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    @foreach (var item in Model)
+{
+    <tr>
+        <th>
+            <img src="http://placehold.it/50x50"> 
+        </th>
+        <th>
+            <span> @item.UserName</span>
+        </th>
+        <th>
+            <span> @item.Name</span>
+        </th>
+        <th>
+            <span> @item.Phone</span>
+        </th>
+    </tr>
+}
+
+
+
