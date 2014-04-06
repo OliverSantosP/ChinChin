@@ -79,16 +79,19 @@
                 <h3>Colaboradores</h3>
             </div>
             <div class="projectdescription">
-                @foreach (var item in Model.Loan.Lenders)
+                @if (Model.Loan != null)
                 {
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <span> @item.User.Name</span>
+                    foreach (var item in Model.Loan.Lenders)
+                    {
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <span> @item.User.Name @item.User.LastName</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span> @String.Format("{0:C}", @item.Amount)</span>
+                            </div>
                         </div>
-                        <div class="col-lg-3">
-                            <span> @String.Format("{0:C}", @item.Amount)</span>
-                        </div>
-                    </div>
+                    }
                 }
             </div>
 
