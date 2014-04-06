@@ -78,7 +78,8 @@ namespace chinchini.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName, Name = model.Name, LastName = model.LastName, Email = model.Email, Address = model.Address, Phone = model.Phone };
+                user.Balance = 500;   // Default for demo purposes
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -332,6 +333,7 @@ namespace chinchini.Controllers
             }
             catch (NullReferenceException nre)
             {
+
             }
 
             return Json(new { exists = available }, JsonRequestBehavior.AllowGet);

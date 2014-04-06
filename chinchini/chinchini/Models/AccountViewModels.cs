@@ -61,6 +61,10 @@ namespace chinchini.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
+        [Display(Name = "Correo Electronico")]
+        public string Email { get; set; }
+
+        [Required]
         [Display(Name = "Nombres")]
         public string Name { get; set; }
 
