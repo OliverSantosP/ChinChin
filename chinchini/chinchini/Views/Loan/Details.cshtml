@@ -106,20 +106,15 @@
             <td>@i</td>
             <td>@payments.Amount</td>
             <td>@payments.DueDate</td>
-            @if (payments.Status.Description == "Pendiente")
-            {
-            <td><input name="id" value="@payments.PaymentID" title="Test" type="submit" class="btn btn-primary" /></td>
-            }
-            else
-            {
-            <td>@payments.Status.Description</td>
-            }        
+            <td>@payments.Status.Description</td>        
         </tr>
         }
         }
     </table>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LoanID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@*
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LoanID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+*@
