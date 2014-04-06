@@ -7,13 +7,13 @@ namespace chinchini.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddStatusFieldtoLoan : IMigrationMetadata
+    public sealed partial class Fix2ndStatusToLoan : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddStatusFieldtoLoan));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Fix2ndStatusToLoan));
         
         string IMigrationMetadata.Id
         {
-            get { return "201404060132138_AddStatusFieldtoLoan"; }
+            get { return "201404060314470_Fix2ndStatusToLoan"; }
         }
         
         string IMigrationMetadata.Source

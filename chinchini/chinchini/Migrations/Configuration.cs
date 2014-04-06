@@ -21,7 +21,22 @@ namespace chinchini.Migrations
             //  to avoid creating duplicate seed data. E.g.
             //
 
-            var user = context.Users.FirstOrDefault();
+#if DEBUG
+            // Delete the users
+            context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
+
+            var testUser = new Models.ApplicationUser { Name = "Don Ramon", LastName = "Perez", Email = "ramon.perez@gmail.com", UserName = "donramon" };
+            //testUser.Logins.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin { UserId = "donramon" });
+
+            var userManager = new Microsoft.AspNet.Identity.UserManager<Models.ApplicationUser>(new Microsoft.AspNet.Identity.EntityFramework.UserStore<Models.ApplicationUser>(context));
+
+
+            userManager.CreateAsync(testUser, "donramon").Wait();
+#endif
+
+
+
+            var user = testUser;
 
             context.ProjectType.AddOrUpdate(pt => pt.Description,
                 new ProjectType { Description = "MicroPrestamo" },
@@ -34,7 +49,7 @@ namespace chinchini.Migrations
                 new LoanType { Description = "Type2" },
                 new LoanType { Description = "Type3" });
 
-            context.SaveChanges();
+            
             context.Status.AddOrUpdate(s => s.Description,
               new Status { Description = "Activo" },
               new Status { Description = "Inactivo" },
@@ -43,16 +58,20 @@ namespace chinchini.Migrations
               new Status { Description = "Test3" },
               new Status { Description = "Test4" });
 
-            context.Project.AddOrUpdate(p => p.ProjectID,
+
+            context.SaveChanges();
+            var status = context.Status.FirstOrDefault();
+            
+            context.Project.AddOrUpdate(p => p.Title,
                 new Project
                 {
                     Title = "This is my first Project",
-                    StatusID = 1,
+                    StatusID=1,
                     ProjectTypeID = 1,
                     Description = "This is the Oliver Description",
                     Amount = 10000,
                     Loan = new Loan()
-                    {
+                    { 
                         Amount = 10000,
                         DateRequested = DateTime.Now,
                         Debt = 6000,
@@ -72,9 +91,7 @@ namespace chinchini.Migrations
                         VideoURL = "https://www.youtube.com/watch?v=8-V-CnKcF7Q"
                     },
                     User_Id = user.Id
-
                 }
-
                 );
                         
             //    context.People.AddOrUpdate(
@@ -85,18 +102,7 @@ namespace chinchini.Migrations
             //    );
             //
 
-#if DEBUG
-            // Delete the users
-            context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
 
-            var testUser = new Models.ApplicationUser { Name = "Don Ramon", LastName = "Perez", Email = "ramon.perez@gmail.com", UserName = "donramon" };
-            //testUser.Logins.Add(new Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin { UserId = "donramon" });
-
-            var userManager = new Microsoft.AspNet.Identity.UserManager<Models.ApplicationUser>(new Microsoft.AspNet.Identity.EntityFramework.UserStore<Models.ApplicationUser>(context));
-
-
-            userManager.CreateAsync(testUser, "donramon").Wait();
-#endif
         }
    }
 }

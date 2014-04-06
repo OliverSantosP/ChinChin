@@ -211,10 +211,6 @@
     <Compile Include="Migrations\201404060055563_AddLoanAndLenders.Designer.cs">
       <DependentUpon>201404060055563_AddLoanAndLenders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201404060132138_AddStatusFieldtoLoan.cs" />
-    <Compile Include="Migrations\201404060132138_AddStatusFieldtoLoan.Designer.cs">
-      <DependentUpon>201404060132138_AddStatusFieldtoLoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.cs" />
     <Compile Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.Designer.cs">
       <DependentUpon>201404060149046_ModifyLoanIDToBeNullable.cs</DependentUpon>
@@ -226,6 +222,14 @@
     <Compile Include="Migrations\201404060216360_FixingUserIds.cs" />
     <Compile Include="Migrations\201404060216360_FixingUserIds.Designer.cs">
       <DependentUpon>201404060216360_FixingUserIds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404060314470_Fix2ndStatusToLoan.cs" />
+    <Compile Include="Migrations\201404060314470_Fix2ndStatusToLoan.Designer.cs">
+      <DependentUpon>201404060314470_Fix2ndStatusToLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404060324522_addmanytoStatus.cs" />
+    <Compile Include="Migrations\201404060324522_addmanytoStatus.Designer.cs">
+      <DependentUpon>201404060324522_addmanytoStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -377,9 +381,6 @@
     <EmbeddedResource Include="Migrations\201404060055563_AddLoanAndLenders.resx">
       <DependentUpon>201404060055563_AddLoanAndLenders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060132138_AddStatusFieldtoLoan.resx">
-      <DependentUpon>201404060132138_AddStatusFieldtoLoan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.resx">
       <DependentUpon>201404060149046_ModifyLoanIDToBeNullable.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +389,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404060216360_FixingUserIds.resx">
       <DependentUpon>201404060216360_FixingUserIds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404060314470_Fix2ndStatusToLoan.resx">
+      <DependentUpon>201404060314470_Fix2ndStatusToLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404060324522_addmanytoStatus.resx">
+      <DependentUpon>201404060324522_addmanytoStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
