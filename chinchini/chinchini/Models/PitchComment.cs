@@ -23,6 +23,8 @@ namespace chinchini.Models
         public int ReplyID { get; set; }
 
         public int PitchID { get; set; }
+
+        [ForeignKey("User")]
         public string User_Id { get; set; }
 
         public virtual ApplicationUser User { get; set; }

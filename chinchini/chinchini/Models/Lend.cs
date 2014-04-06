@@ -17,6 +17,7 @@ namespace chinchini.Models
 
         public DateTime Timestamp { get; set; }
 
+        [ForeignKey("User")]
         public string User_Id { get; set; }
         public int LoanID { get; set; }
         public virtual Loan Loan { get; set; }

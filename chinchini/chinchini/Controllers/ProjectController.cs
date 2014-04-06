@@ -29,7 +29,7 @@ namespace chinchini.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Project project = db.Project.Include(x=>x.User).Single(x=>x.ProjectID == id);
+            Project project = db.Project.Include("Loan.Lenders.User").Single(x => x.ProjectID == id);
             if (project == null)
             {
                 return HttpNotFound();

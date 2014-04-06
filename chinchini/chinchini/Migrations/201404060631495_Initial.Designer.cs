@@ -7,13 +7,13 @@ namespace chinchini.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddLoanAndLenders : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddLoanAndLenders));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201404060055563_AddLoanAndLenders"; }
+            get { return "201404060631495_Initial"; }
         }
         
         string IMigrationMetadata.Source

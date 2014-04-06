@@ -24,6 +24,7 @@ namespace chinchini.Models
         public int ProjectTypeID { get; set; }
         public int? LoanID { get; set; }
 
+        [ForeignKey("User")]
         public string User_Id { get; set; }
         
         public virtual Status Status { get; set; }
