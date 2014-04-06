@@ -43,7 +43,7 @@
                         RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
                     </span>
                 </div>
-                @if (User.Identity.IsAuthenticated == true)
+                @if (Request.IsAuthenticated == true)
                 {
                     using (Html.BeginForm("Lend","Project", FormMethod.Post))
                     {
