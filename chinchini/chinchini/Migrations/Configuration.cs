@@ -1,11 +1,11 @@
 namespace chinchini.Migrations
 {
     using chinchini.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<chinchini.Models.ApplicationDbContext>
     {
@@ -84,23 +84,23 @@ using System.Linq;
 
 
             Project proj = new Project()
-                {
-                    Title = "This is my first Project",
-                    StatusID = 1,
-                    ProjectTypeID = 1,
-                    Description = "This is the Oliver Description",
-                    Amount = 10000,
-                    User_Id = user.Id
-                };
+            {
+                Title = "This is my first Project",
+                StatusID = 1,
+                ProjectTypeID = 1,
+                Description = "This is the Oliver Description",
+                Amount = 10000,
+                User_Id = user.Id
+            };
 
 
             proj.Loan = l;
             proj.Pitch = new Pitch()
-                    {
-                        Body = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando ",
-                        Description = "A little bit more",
-                        VideoURL = "https://www.youtube.com/watch?v=8-V-CnKcF7Q"
-                    };
+            {
+                Body = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando ",
+                Description = "A little bit more",
+                VideoURL = "https://www.youtube.com/watch?v=8-V-CnKcF7Q"
+            };
             context.Project.AddOrUpdate(p => p.Title,
                 proj
                 );
@@ -112,6 +112,7 @@ using System.Linq;
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
 
         }
     }

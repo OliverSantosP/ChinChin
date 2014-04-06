@@ -155,6 +155,8 @@ namespace chinchini.Migrations
                         Name = c.String(),
                         LastName = c.String(),
                         Email = c.String(),
+                        Address = c.String(),
+                        Phone = c.String(),
                         Balance = c.Single(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                         Status_StatusID = c.Int(),

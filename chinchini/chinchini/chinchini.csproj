@@ -167,13 +167,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201404060631495_Initial.cs" />
-    <Compile Include="Migrations\201404060631495_Initial.Designer.cs">
-      <DependentUpon>201404060631495_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060319399_Add Address and Phone to the User.cs" />
-    <Compile Include="Migrations\201404060319399_Add Address and Phone to the User.Designer.cs">
-      <DependentUpon>201404060319399_Add Address and Phone to the User.cs</DependentUpon>
+    <Compile Include="Migrations\201404060734041_Initial.cs" />
+    <Compile Include="Migrations\201404060734041_Initial.Designer.cs">
+      <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,11 +288,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201404060631495_Initial.resx">
-      <DependentUpon>201404060631495_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060319399_Add Address and Phone to the User.resx">
-      <DependentUpon>201404060319399_Add Address and Phone to the User.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201404060734041_Initial.resx">
+      <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

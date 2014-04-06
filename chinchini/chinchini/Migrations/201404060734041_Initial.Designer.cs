@@ -13,7 +13,7 @@ namespace chinchini.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201404060631495_Initial"; }
+            get { return "201404060734041_Initial"; }
         }
         
         string IMigrationMetadata.Source
