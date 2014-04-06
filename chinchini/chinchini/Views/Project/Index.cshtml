@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="descripcion">
-                                @item.ProjectType.Description
+                                @item.User.Name @item.User.LastName
                                 <div class="progress">
                                     @{float PercentageTotal = chinchini.Models.Project.GetPercentage(@item.ProjectID);}
                                     <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
