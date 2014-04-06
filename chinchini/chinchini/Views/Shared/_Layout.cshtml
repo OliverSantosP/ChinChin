@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - UnChin.org</title>
-        @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/Site.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
@@ -13,8 +13,8 @@
 <body>
     <div class="container">
         <div class="page-header">
-                <div style="display: inline-block"><h1 id="navbar"><a href="/Home/Index" style="text-decoration:none">UnChin</a></h1></div>
-                <div class="pull-right" style="display: inline-block; margin: 0px 10px;">@Html.Partial("_LoginPartial")</div>
+            <div style="display: inline-block"><h1 id="navbar"><a href="/Home/Index" style="text-decoration:none">UnChin</a></h1></div>
+            <div class="pull-right" style="display: inline-block; margin: 0px 10px;">@Html.Partial("_LoginPartial")</div>
         </div>
         <div class="bs-component">
             <div class="navbar navbar-inverse">
@@ -32,10 +32,13 @@
                         <li><a href="/Project?Type=Apoya">Apoya</a></li>
                         <li><a href="#">Quienes somos?</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Mi Proyecto</a></li>
-                        <li><a href="#">Mi Grupo</a></li>
-                    </ul>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/Project">Mi Proyecto</a></li>
+                            <li><a href="/Group">Mi Grupo</a></li>
+                        </ul>
+                    }
                 </div>
 
             </div>
@@ -79,6 +82,6 @@
 
     <script type="text/javascript" src="@Url.Content("~/Content/FileUpload/locale.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Content/FileUpload/main.js")"></script>
-    
+
 </body>
 </html>
