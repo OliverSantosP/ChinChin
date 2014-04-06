@@ -5943,3 +5943,7 @@ img {
         width: auto;
         height: 200px;
     }
+
+.descripcion{
+    color:#404040;
+}
