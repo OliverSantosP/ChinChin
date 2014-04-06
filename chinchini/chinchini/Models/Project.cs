@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-
+using chinchini.Models;
 
 namespace chinchini.Models
 {
@@ -33,6 +33,22 @@ namespace chinchini.Models
         public virtual ProjectType ProjectType { get; set; }
 
         public virtual Loan Loan { get; set; }
+
+        public static float GetLendTotal(int Id)
+        {
+            var db = new Models.ApplicationDbContext();
+            float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
+            return LendTotal;
+        }
+
+        public static float GetPercentage(int Id)
+        {
+            var db = new Models.ApplicationDbContext();
+            float LendTotal = db.Project.Find(Id).Loan.Lenders.Sum(x => x.Amount);
+            float ProjectAmmount = db.Project.Find(Id).Amount;
+            float PercentageTotal = LendTotal * 100 / ProjectAmmount;
+            return PercentageTotal;
+        }
     }
 
 }

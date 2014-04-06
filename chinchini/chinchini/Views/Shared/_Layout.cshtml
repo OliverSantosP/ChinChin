@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="page-header">
-                <div style="display: inline-block"><h1 id="navbar">UnChin</h1></div>
+                <div style="display: inline-block"><h1 id="navbar"><a href="/Home/Index" style="text-decoration:none">UnChin</a></h1></div>
                 <div class="pull-right" style="display: inline-block; margin: 0px 10px;">@Html.Partial("_LoginPartial")</div>
         </div>
         <div class="bs-component">
@@ -37,7 +37,6 @@
             </div>
         </div>
         @RenderBody()
-        <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - UnChin.org</p>
         </footer>

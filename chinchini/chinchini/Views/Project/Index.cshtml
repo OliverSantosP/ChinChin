@@ -3,65 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pitch.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectType.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pitch.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectType.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProjectID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProjectID })
-        </td>
-    </tr>
-}
-
-</table>
-
+<div class="box">
+    @Html.ActionLink("Crear Nuevo Proyecto", "Create")
+</div>
+<br />
+<br />
 @foreach (var item in Model)
 {
     <div class="box">
@@ -75,9 +21,10 @@
                     </div>
                     <div class="descripcion">@item.ProjectType.Description
                         <div class="progress">
-                            <div class="progress-bar progress-bar-success" style="width:80%"></div>
+                            @{float PercentageTotal = chinchini.Models.Project.GetPercentage(@item.ProjectID);}
+                            <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
                         </div>
-                        RD$ 8,000 de @item.Amount
+                        RD@{float Total = chinchini.Models.Project.GetLendTotal(@item.ProjectID); @String.Format("{0:C}", @Total);} de @item.Amount
                     </div>
                 </div>
             </div>
