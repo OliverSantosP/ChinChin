@@ -6,7 +6,7 @@
 }
 
 
-    <div class="content-wrapper">
+<div class="content-wrapper">
     <div class="encapsulate">
         <div class="bluecontainer">
             <div class="image-wrap">
@@ -61,29 +61,17 @@
 
 
             <h3>Colaboradores</h3>
-
-        @foreach (var item in Model.Loan.Lenders)
-        {
-            <div class="col-lg-3">
-                <span> @item.User.Name</span>
-                <span> @item.Amount </span>               
-            </div>
-        }
-
-
-            @foreach (var item in Model.Loan.Lenders)
+            @if (Model.Loan != null)
             {
-                <div class="col-lg-3">
-                    @*<span> @item.User.Name</span>*@
-                    <span> @item.Amount </span>
-                </div>
+                foreach (var item in Model.Loan.Lenders)
+                {
+                    <div class="col-lg-3">
+                        <span> @item.User.Name</span>
+                        <span> @item.Amount </span>
+                    </div>
+                }
             }
 
-
-           
         </div>
     </div>
 </div>
-
-    
-
