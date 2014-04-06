@@ -57,7 +57,7 @@ namespace chinchini.Controllers
             if (project.ProjectTypeID == 1)
             {
                 var user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
-                var usergroup = db.UserGroup.Where(x=>x.GroupID == db.UserGroup.FirstOrDefault(ug=>ug.User_Id == user.Id).GroupID);
+                var usergroup = db.UserGroup.Where(x => x.GroupID == db.UserGroup.FirstOrDefault(ug => ug.User_Id == user.Id).GroupID);
 
                 if (usergroup.Count() < 2)
                 {
@@ -72,12 +72,29 @@ namespace chinchini.Controllers
                 db.Pitch.Add(pitch);
                 db.SaveChanges();
                 project.PitchID = pitch.PitchID;
+
+                project.Loan = new Loan()
+                {
+                    Amount = project.Amount,
+                    DateRequested = DateTime.Today,
+                    Debt = 0,
+                    Lenders = new List<Lend>(),
+                    LoanTypeID = 1,
+                    PeriodDays = 180,
+                    Quota = 600,
+                    Rate = ((project.ProjectTypeID == 0) || (project.ProjectTypeID == 2)) ? (float)0 : (float)5,
+                    StatusID = 1
+
+                };
+
+
                 db.Project.Add(project);
                 db.SaveChanges();
 
 
                 return RedirectToAction("Index");
             }
+
 
             ViewBag.PitchID = new SelectList(db.Pitch, "PitchID", "Name", project.PitchID);
             ViewBag.ProjectTypeID = new SelectList(db.ProjectType, "ProjectTypeID", "Description", project.ProjectTypeID);
