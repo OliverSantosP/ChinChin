@@ -61,3 +61,25 @@
 }
 
 </table>
+
+@foreach (var item in Model)
+{
+    <div class="box">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="/Project/Details/@item.ProjectID"><img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize" /></a>
+                    <div class="boxpad">
+                        <div class="boxpad">
+                            <p class="example-title">@item.Pitch.Name</p>
+                        </div>
+                    </div>
+                    <div class="descripcion">@item.ProjectType.Description
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width:80%"></div>
+                        </div>
+                        RD$ 8,000 de @item.Amount
+                    </div>
+                </div>
+            </div>
+        </div>
+}
