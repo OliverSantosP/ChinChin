@@ -65,8 +65,8 @@ namespace chinchini.Controllers
          new Category { Name = "Minorista" },
          new Category { Name = "Salud" }});
 
-
-            //context.SaveChanges();
+            
+            context.SaveChanges();
             var status = context.Status.FirstOrDefault();
 
             var lend1 = new Lend { Amount = 5000, AmountLeft = 2000, User_Id = testUser.Id, Timestamp = DateTime.Now };
@@ -117,7 +117,7 @@ namespace chinchini.Controllers
             context.SaveChanges();
         }catch (DataException d)
             {
-                ViewBag.Message = d.Message  + d.StackTrace;
+                ViewBag.Message = d.Message + d.StackTrace + d.InnerException.Message + d.InnerException.StackTrace;
                 return View();
             }
             return View();
