@@ -115,9 +115,9 @@ namespace chinchini.Controllers
                 );
 
             context.SaveChanges();
-        }catch (DataException)
+        }catch (DataException d)
             {
-                ViewBag.Message = "Your application description page.";
+                ViewBag.Message = d.Message  + d.StackTrace;
                 return View();
             }
             return View();
