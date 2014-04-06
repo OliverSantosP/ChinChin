@@ -1,6 +1,7 @@
 ﻿using chinchini.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -18,11 +19,11 @@ namespace chinchini.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            
 
             var context = new ApplicationDbContext();
 
-
+            try{
             // Delete the users
             //context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
             Models.ApplicationUser testUser = context.Users.Where(u => u.UserName == "donramon").FirstOrDefault();
@@ -114,6 +115,11 @@ namespace chinchini.Controllers
                 );
 
             context.SaveChanges();
+        }catch (DataException)
+            {
+                ViewBag.Message = "Your application description page.";
+                return View();
+            }
             return View();
         }
 
