@@ -34,37 +34,35 @@
                 <div class="progressbig">
                     <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
                 </div>
-            </div>
+            </div><div class="projectprice">
 
-            <<div class="projectprice">
-
-    <div class="pull-right">
-        <span>
-            RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
-        </span>
-    </div>
-    @if (Request.IsAuthenticated == true)
-    {
-        using (Html.BeginForm("Lend", "Project", FormMethod.Post))
-        {
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">$</span>
-                            @Html.Hidden("ProjectId", Model.ProjectID)
-                            <input type="text" name="Amount" class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." />
-                            <span class="input-group-btn">
-                                <input class="btn btn-default" type="submit" value="Aporta" />
-                            </span>
-                        </div>
-                    </div>
+                <div class="pull-right">
+                    <span>
+                        RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
+                    </span>
                 </div>
-            </div>
-        }
-    }
+                @if (Request.IsAuthenticated == true)
+                {
+                    using (Html.BeginForm("Lend", "Project", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span>
+                                        @Html.Hidden("ProjectId", Model.ProjectID)
+                                        <input type="text" name="Amount" class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." />
+                                        <span class="input-group-btn">
+                                            <input class="btn btn-default" type="submit" value="Aporta" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
 
-</div>
+            </div>
 
 
 
