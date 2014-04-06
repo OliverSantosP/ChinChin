@@ -9,6 +9,7 @@ namespace chinchini.Models
 {
     public class Loan
     {
+
         public int LoanID { get; set; }
         public float Amount { get; set; }
         public float Rate { get; set; }
@@ -19,17 +20,16 @@ namespace chinchini.Models
         [Timestamp]
         public Byte[] LastUpdatedDate { get; set; }
 
-       
-        public virtual Status Status { get; set; }
 
-        public int ProjectID { get; set; }
-        public virtual Project Project { get; set; }
+        public int? StatusID { get; set; }
+        public virtual Status Status { get; set; }
 
         public int LoanTypeID { get; set; }
         public virtual LoanType LoanType { get; set; }
 
         public virtual ApplicationUser User { get; set; }
         public virtual List<Payment> Payments { get; set; }
+        public virtual List<Lend> Lenders { get; set; }
 
         
     }

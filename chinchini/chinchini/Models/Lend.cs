@@ -17,6 +17,7 @@ namespace chinchini.Models
 
         public DateTime Timestamp { get; set; }
 
+        public string User_Id { get; set; }
         public int LoanID { get; set; }
         public virtual Loan Loan { get; set; }
         public virtual ApplicationUser User { get; set; }
