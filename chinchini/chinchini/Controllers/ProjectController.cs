@@ -92,7 +92,7 @@ namespace chinchini.Controllers
                 db.SaveChanges();
 
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = project.ProjectID });
             }
 
 
@@ -101,6 +101,33 @@ namespace chinchini.Controllers
             ViewBag.CategoryID = new SelectList(db.Category, "CategoryID", "Name");
             return View(project);
         }
+
+
+
+        [HttpPost]
+        public ActionResult Lend(int ProjectID, string amount)
+        {
+            var project = db.Project.Find(ProjectID);
+
+            if(project == null) 
+                return RedirectToAction("Details", new { id = ProjectID });
+
+            Lend lend = new Lend();
+            lend.LoanID = (int)project.LoanID;
+            lend.Timestamp = DateTime.Now;
+            lend.User_Id = db.Users.FirstOrDefault(x=>x.UserName == User.Identity.Name).Id;
+            lend.Amount = float.Parse(amount);
+            lend.AmountLeft = float.Parse(amount);
+            lend.Status = project.Status;
+
+            project.Loan.Lenders.Add(lend);
+
+            db.SaveChanges();
+
+            return RedirectToAction("Details", new { id = ProjectID });
+        }
+        
+
 
         // GET: /Project/Edit/5
         public ActionResult Edit(int? id)
