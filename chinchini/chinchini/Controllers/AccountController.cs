@@ -78,7 +78,8 @@ namespace chinchini.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName, Name = model.Name, LastName = model.LastName, Email = model.Email, Address = model.Address, Phone = model.Phone };
+                user.Balance = 500;   // Default for demo purposes
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -318,6 +319,27 @@ namespace chinchini.Controllers
             }
             base.Dispose(disposing);
         }
+
+        #region Validators
+
+        [AllowAnonymous]
+        public JsonResult CheckUserNameAvailable(string id)
+        {
+            var available = true;
+
+            try
+            {
+                available = UserManager.FindByName(id).UserName != id;
+            }
+            catch (NullReferenceException nre)
+            {
+
+            }
+
+            return Json(new { exists = available }, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         #region Helpers
         // Used for XSRF protection when adding external logins
