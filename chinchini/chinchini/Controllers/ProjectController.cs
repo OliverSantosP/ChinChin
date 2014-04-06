@@ -54,8 +54,21 @@ namespace chinchini.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Project project)
         {
+
+            if (project.ProjectTypeID == 1)
+            {
+                var user = db.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                var usergroup = db.UserGroup.Where(x=>x.GroupID == db.UserGroup.FirstOrDefault(ug=>ug.User_Id == user.Id).GroupID);
+
+                if (usergroup.Count() < 2)
+                {
+                    ModelState.AddModelError("ProjectTypeID", "El grupo al que perteneces debe de tener al menos 3 integrantes!");
+                }
+            }
+
             if (ModelState.IsValid)
             {
+                
                 var pitch = project.Pitch;
                 db.Pitch.Add(pitch);
                 db.SaveChanges();
@@ -70,6 +83,7 @@ namespace chinchini.Controllers
             ViewBag.PitchID = new SelectList(db.Pitch, "PitchID", "Name", project.PitchID);
             ViewBag.ProjectTypeID = new SelectList(db.ProjectType, "ProjectTypeID", "Description", project.ProjectTypeID);
             ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description", project.StatusID);
+            ViewBag.CategoryID = new SelectList(db.Category, "CategoryID", "Name");
             return View(project);
         }
 
