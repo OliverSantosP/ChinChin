@@ -276,7 +276,6 @@ body {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.42857143;
-  color: #333333;
   background-color: #ffffff;
 }
 input,
@@ -736,6 +735,7 @@ pre code {
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+
 }
 @media (min-width: 768px) {
   .container {
@@ -750,6 +750,7 @@ pre code {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+    //background: #007fff;
   }
 }
 .container-fluid {
@@ -4751,13 +4752,8 @@ a.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 21px;
   background-color: #ffffff;
-  border: 1px solid transparent;
-  border-radius: 0;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-  padding: 15px;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -5893,3 +5889,57 @@ table .info a,
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
+
+.boxpad {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    background-color: #FFFFFF;
+    color: #404040;
+    text-align: center;
+    
+    -webkit-font-smoothing: antialiased;
+}
+
+.box {
+    float: left;
+    height: auto;
+    width: 270px;
+    position: relative;
+}
+
+    .box.medium {
+        float: left;
+        height: 278px;
+        width: auto;
+    }
+
+    .box.big {
+        float: left;
+        height: 413px;
+        width: auto;
+    }
+
+    .masonry {
+    margin: 0 auto;
+}
+
+.thumby {
+    margin: 0px;
+    position:relative !important;
+}
+
+.container2
+{
+    width:1200px;
+    position:relative !important;
+}
+
+img {
+    border: 0;
+}
+
+    img.resize {
+        width: auto;
+        height: 200px;
+    }
