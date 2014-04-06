@@ -13,6 +13,8 @@ namespace chinchini.Models
 
         public int ProjectID { get; set; }
 
+        [ForeignKey("User")]
+        public string User_Id { get; set; }
         public virtual Project Project {get;set;}   
         public virtual ApplicationUser User{get;set;}
         

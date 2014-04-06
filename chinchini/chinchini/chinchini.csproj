@@ -167,73 +167,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201404051552073_initialMIG.cs" />
-    <Compile Include="Migrations\201404051552073_initialMIG.Designer.cs">
-      <DependentUpon>201404051552073_initialMIG.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051557497_AddingUserFields.cs" />
-    <Compile Include="Migrations\201404051557497_AddingUserFields.Designer.cs">
-      <DependentUpon>201404051557497_AddingUserFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051754475_Project-Pitch-LoanEntities.cs" />
-    <Compile Include="Migrations\201404051754475_Project-Pitch-LoanEntities.Designer.cs">
-      <DependentUpon>201404051754475_Project-Pitch-LoanEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051848574_PaymentEntity.cs" />
-    <Compile Include="Migrations\201404051848574_PaymentEntity.Designer.cs">
-      <DependentUpon>201404051848574_PaymentEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051853082_PaymentTransactionEntity.cs" />
-    <Compile Include="Migrations\201404051853082_PaymentTransactionEntity.Designer.cs">
-      <DependentUpon>201404051853082_PaymentTransactionEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051902215_PaymentDetailEntity.cs" />
-    <Compile Include="Migrations\201404051902215_PaymentDetailEntity.Designer.cs">
-      <DependentUpon>201404051902215_PaymentDetailEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051932109_AddPaymentDetail.cs" />
-    <Compile Include="Migrations\201404051932109_AddPaymentDetail.Designer.cs">
-      <DependentUpon>201404051932109_AddPaymentDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051946151_AddLend.cs" />
-    <Compile Include="Migrations\201404051946151_AddLend.Designer.cs">
-      <DependentUpon>201404051946151_AddLend.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404051946556_AddPaymentMethod.cs" />
-    <Compile Include="Migrations\201404051946556_AddPaymentMethod.Designer.cs">
-      <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404052043487_AddMoreEntities.cs" />
-    <Compile Include="Migrations\201404052043487_AddMoreEntities.Designer.cs">
-      <DependentUpon>201404052043487_AddMoreEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060055563_AddLoanAndLenders.cs" />
-    <Compile Include="Migrations\201404060055563_AddLoanAndLenders.Designer.cs">
-      <DependentUpon>201404060055563_AddLoanAndLenders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.cs" />
-    <Compile Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.Designer.cs">
-      <DependentUpon>201404060149046_ModifyLoanIDToBeNullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060214233_FixUserFields.cs" />
-    <Compile Include="Migrations\201404060214233_FixUserFields.Designer.cs">
-      <DependentUpon>201404060214233_FixUserFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060216360_FixingUserIds.cs" />
-    <Compile Include="Migrations\201404060216360_FixingUserIds.Designer.cs">
-      <DependentUpon>201404060216360_FixingUserIds.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060314470_Fix2ndStatusToLoan.cs" />
-    <Compile Include="Migrations\201404060314470_Fix2ndStatusToLoan.Designer.cs">
-      <DependentUpon>201404060314470_Fix2ndStatusToLoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060324522_addmanytoStatus.cs" />
-    <Compile Include="Migrations\201404060324522_addmanytoStatus.Designer.cs">
-      <DependentUpon>201404060324522_addmanytoStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201404060319399_Add Address and Phone to the User.cs" />
-    <Compile Include="Migrations\201404060319399_Add Address and Phone to the User.Designer.cs">
-      <DependentUpon>201404060319399_Add Address and Phone to the User.cs</DependentUpon>
+    <Compile Include="Migrations\201404060734041_Initial.cs" />
+    <Compile Include="Migrations\201404060734041_Initial.Designer.cs">
+      <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,7 +244,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -352,56 +290,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201404051552073_initialMIG.resx">
-      <DependentUpon>201404051552073_initialMIG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051557497_AddingUserFields.resx">
-      <DependentUpon>201404051557497_AddingUserFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051754475_Project-Pitch-LoanEntities.resx">
-      <DependentUpon>201404051754475_Project-Pitch-LoanEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051848574_PaymentEntity.resx">
-      <DependentUpon>201404051848574_PaymentEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051853082_PaymentTransactionEntity.resx">
-      <DependentUpon>201404051853082_PaymentTransactionEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051902215_PaymentDetailEntity.resx">
-      <DependentUpon>201404051902215_PaymentDetailEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051932109_AddPaymentDetail.resx">
-      <DependentUpon>201404051932109_AddPaymentDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051946151_AddLend.resx">
-      <DependentUpon>201404051946151_AddLend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404051946556_AddPaymentMethod.resx">
-      <DependentUpon>201404051946556_AddPaymentMethod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404052043487_AddMoreEntities.resx">
-      <DependentUpon>201404052043487_AddMoreEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060055563_AddLoanAndLenders.resx">
-      <DependentUpon>201404060055563_AddLoanAndLenders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060149046_ModifyLoanIDToBeNullable.resx">
-      <DependentUpon>201404060149046_ModifyLoanIDToBeNullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060214233_FixUserFields.resx">
-      <DependentUpon>201404060214233_FixUserFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060216360_FixingUserIds.resx">
-      <DependentUpon>201404060216360_FixingUserIds.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060314470_Fix2ndStatusToLoan.resx">
-      <DependentUpon>201404060314470_Fix2ndStatusToLoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060324522_addmanytoStatus.resx">
-      <DependentUpon>201404060324522_addmanytoStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201404060319399_Add Address and Phone to the User.resx">
-      <DependentUpon>201404060319399_Add Address and Phone to the User.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201404060734041_Initial.resx">
+      <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
