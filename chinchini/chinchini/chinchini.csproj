@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201404060734041_Initial.Designer.cs">
       <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404061431417_Cualquier vaina..cs" />
+    <Compile Include="Migrations\201404061431417_Cualquier vaina..Designer.cs">
+      <DependentUpon>201404061431417_Cualquier vaina..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
@@ -292,6 +296,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201404060734041_Initial.resx">
       <DependentUpon>201404060734041_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404061431417_Cualquier vaina..resx">
+      <DependentUpon>201404061431417_Cualquier vaina..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -43,19 +43,26 @@
                         RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
                     </span>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Aporta</button>
-                                </span>
+                @{if (User.Identity.IsAuthenticated == true)
+                {using (Html.BeginForm())
+                {
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <input class="btn btn-default" type="submit" value="Aporta" />
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
+                }
+                }
+
             </div>
 
 
@@ -72,14 +79,16 @@
             </div>
             <div class="projectdescription">
                 @foreach (var item in Model.Loan.Lenders)
-                {<div class="row">
+                {
+                    <div class="row">
                     <div class="col-lg-3">
                         <span> @item.User.Name</span>
                     </div>
                     <div class="col-lg-3">
                         <span> @String.Format("{0:C}", @item.Amount)</span>
                     </div>
-                </div> }
+                </div> 
+                }
             </div>
 
 
@@ -88,6 +97,3 @@
         </div>
     </div>
 </div>
-
-
-
