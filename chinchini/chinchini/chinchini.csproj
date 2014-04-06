@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -171,10 +172,19 @@
     <Compile Include="Migrations\201404060734041_Initial.Designer.cs">
       <DependentUpon>201404060734041_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404060922369_Add-Group.cs" />
+    <Compile Include="Migrations\201404060922369_Add-Group.Designer.cs">
+      <DependentUpon>201404060922369_Add-Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404060931318_AddGroupID-to-UserGroup.cs" />
+    <Compile Include="Migrations\201404060931318_AddGroupID-to-UserGroup.Designer.cs">
+      <DependentUpon>201404060931318_AddGroupID-to-UserGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
     <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lend.cs" />
     <Compile Include="Models\Loan.cs" />
@@ -277,6 +287,11 @@
     <Content Include="Views\Project\Details.cshtml" />
     <Content Include="Views\Project\Edit.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Group\Create.cshtml" />
+    <Content Include="Views\Group\Delete.cshtml" />
+    <Content Include="Views\Group\Details.cshtml" />
+    <Content Include="Views\Group\Edit.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -292,6 +307,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201404060734041_Initial.resx">
       <DependentUpon>201404060734041_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404060922369_Add-Group.resx">
+      <DependentUpon>201404060922369_Add-Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404060931318_AddGroupID-to-UserGroup.resx">
+      <DependentUpon>201404060931318_AddGroupID-to-UserGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
