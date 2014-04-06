@@ -324,9 +324,17 @@ namespace chinchini.Controllers
         [AllowAnonymous]
         public JsonResult CheckUserNameAvailable(string id)
         {
-            var exists = UserManager.FindByName(id).UserName != id;
+            var available = true;
 
-            return Json(new { exists = exists }, JsonRequestBehavior.AllowGet);
+            try
+            {
+                available = UserManager.FindByName(id).UserName != id;
+            }
+            catch (NullReferenceException nre)
+            {
+            }
+
+            return Json(new { exists = available }, JsonRequestBehavior.AllowGet);
         }
 
         #endregion

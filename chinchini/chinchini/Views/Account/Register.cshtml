@@ -64,4 +64,25 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $.ready(function ()
+        {
+            $.validator.addMethod("CheckUserNameAvailable", function (value, element) {
+                var progress = $('#check_progress');
+                progress.class = 'spinner';
+                progress.show();
+                $.getJSON('Accout/CheckUserNameAvailable/' + $(element).val()).done(function (data) {
+                    if (data.exists) {
+                        progress.class = 'check';
+                    }
+                    else
+                    {
+                        progress.class = 'cross';
+                    }
+                })
+            }
+                )
+        })
+    </script>
 }
