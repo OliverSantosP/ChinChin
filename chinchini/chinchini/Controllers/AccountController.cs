@@ -319,6 +319,18 @@ namespace chinchini.Controllers
             base.Dispose(disposing);
         }
 
+        #region Validators
+
+        [AllowAnonymous]
+        public JsonResult CheckUserNameAvailable(string id)
+        {
+            var exists = UserManager.FindByName(id).UserName != id;
+
+            return Json(new { exists = exists }, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
