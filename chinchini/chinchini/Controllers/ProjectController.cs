@@ -42,7 +42,6 @@ namespace chinchini.Controllers
         {
             //ViewBag.PitchID = new SelectList(db.Pitch, "PitchID", "Name");
             ViewBag.ProjectTypeID = new SelectList(db.ProjectType, "ProjectTypeID", "Description");
-            ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description");
             ViewBag.CategoryID = new SelectList(db.Category, "CategoryID", "Name");
             return View();
         }
@@ -68,7 +67,7 @@ namespace chinchini.Controllers
 
             if (ModelState.IsValid)
             {
-                
+                project.StatusID = 3;
                 var pitch = project.Pitch;
                 db.Pitch.Add(pitch);
                 db.SaveChanges();
@@ -82,7 +81,6 @@ namespace chinchini.Controllers
 
             ViewBag.PitchID = new SelectList(db.Pitch, "PitchID", "Name", project.PitchID);
             ViewBag.ProjectTypeID = new SelectList(db.ProjectType, "ProjectTypeID", "Description", project.ProjectTypeID);
-            ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description", project.StatusID);
             ViewBag.CategoryID = new SelectList(db.Category, "CategoryID", "Name");
             return View(project);
         }
