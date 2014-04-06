@@ -31,6 +31,42 @@ namespace chinchini.Models
         public virtual List<Payment> Payments { get; set; }
         public virtual List<Lend> Lenders { get; set; }
 
-        
+        protected Payment CalculateNextPayment()
+        {
+            var payment = new Payment();
+
+            return payment;
+        }
+
+        public Payment NextPayment()
+        {
+            Payment payment = null;
+
+            //payment = Payments.LastOrDefault(new Payment { Amount = this.Quota, Loan = this });
+
+            //if (payment.Status == "NOT PAID")
+            //{
+
+            //}
+
+            return payment;
+        }
+
+        public void Pay()
+        {
+            // Validate stuff
+            this.ValidateIntegrity();
+
+            var payment = new Payment();
+            payment.Amount = this.Amount;
+            payment.Loan = this;
+
+            Payments.Add(payment);
+        }
+
+        public bool ValidateIntegrity()
+        {
+            return true;
+        }
     }
 }

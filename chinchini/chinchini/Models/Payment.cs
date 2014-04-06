@@ -15,7 +15,7 @@ namespace chinchini.Models
         public string Authorization { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public byte[] Timestamp { get; set; }
-
+        public DateTime DueDate { get; set; }
 
         public virtual Loan Loan { get; set; }
         public virtual Status Status { get; set; }

@@ -31,8 +31,5 @@ namespace chinchini.Models
         public DbSet<Group> Group { get; set; }
         public DbSet<UserGroup> UserGroup { get; set; }
         public DbSet<Category> Category { get; set; }
-        
-
-
     }
 }

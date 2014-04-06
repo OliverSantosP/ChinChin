@@ -9,7 +9,7 @@ namespace chinchini.Models
 {
     public class Project
     {
-        public Project ()
+        public Project()
         {
             //this.Pitch = new Pitch();
         }

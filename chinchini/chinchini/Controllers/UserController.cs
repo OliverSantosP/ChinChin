@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using chinchini.Models;
 
 namespace chinchini.Controllers
 {
     public class UserController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
+
         //
         // GET: /User/
         public ActionResult Index()
@@ -20,7 +23,6 @@ namespace chinchini.Controllers
         public ActionResult Details(string id)
         {
             // Get User profile info
-            var db = new Models.ApplicationDbContext();
 
             // Get User Profile
             var user = db.Users.Where(u => u.UserName == id).FirstOrDefault();
@@ -32,6 +34,18 @@ namespace chinchini.Controllers
             ViewBag.donations = db.Project.Where(p => p.User.UserName == user.UserName && p.ProjectType.Description == "Donaciones").AsEnumerable();
 
             return View(user);
+        }
+
+        //
+        // GET: /User/Projects/
+        [Authorize]
+        public ActionResult Projects()
+        {
+            var username = User.Identity.Name;
+
+            var projects = db.Project.Include("User").Include("Loan").Include("Pitch").Include("ProjectType").Include("Status").Where(p => p.User.UserName == username).AsEnumerable();
+
+            return View(projects);
         }
 	}
 }
