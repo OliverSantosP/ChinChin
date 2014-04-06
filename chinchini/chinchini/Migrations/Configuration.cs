@@ -71,7 +71,7 @@ namespace chinchini.Migrations
             //context.SaveChanges();
             var status = context.Status.FirstOrDefault();
 
-            var lend1 = new Lend { Amount = 5000, AmountLeft = 2000, User_Id = user.Id, Timestamp = DateTime.Now };
+            var lend1 = new Lend { Amount = 2000, AmountLeft = 2000, User_Id = user.Id, Timestamp = DateTime.Now };
             context.Lend.AddOrUpdate(l => l.LendID, lend1);
 
             var lend2 = new Lend { Amount = 5000, AmountLeft = 2000, User_Id = user.Id, Timestamp = DateTime.Now };

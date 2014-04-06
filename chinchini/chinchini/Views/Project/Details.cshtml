@@ -37,20 +37,35 @@
             </div>
 
             <div class="projectprice">
+
                 <div class="pull-right">
                     <span>
                         RD@{float Total = chinchini.Models.Project.GetLendTotal(@Model.ProjectID); @String.Format("{0:C}", @Total)} de @String.Format("{0:C}", Model.Amount)
                     </span>
                 </div>
+                @{if (User.Identity.IsAuthenticated == true)
+                {using (Html.BeginForm())
+                {
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <input class="btn btn-default" type="submit" value="Aporta" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                }
+                }
+
             </div>
 
-            <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input type="text" class="form-control">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Button</button>
-                </span>
-            </div>
+
 
             @foreach (var item in Model.Pitch.PitchGallery)
             {
@@ -59,18 +74,25 @@
                 </div>
             }
 
-
-            <h3>Colaboradores</h3>
-            @if (Model.Loan != null)
-            {
-                foreach (var item in Model.Loan.Lenders)
+            <div class="projecttitle">
+                <h3>Colaboradores</h3>
+            </div>
+            <div class="projectdescription">
+                @foreach (var item in Model.Loan.Lenders)
                 {
+                    <div class="row">
                     <div class="col-lg-3">
                         <span> @item.User.Name</span>
-                        <span> @item.Amount </span>
                     </div>
+                    <div class="col-lg-3">
+                        <span> @String.Format("{0:C}", @item.Amount)</span>
+                    </div>
+                </div> 
                 }
-            }
+            </div>
+
+
+
 
         </div>
     </div>
