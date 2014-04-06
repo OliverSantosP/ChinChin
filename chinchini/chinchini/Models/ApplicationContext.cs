@@ -28,7 +28,9 @@ namespace chinchini.Models
         public DbSet<PaymentDetail> PaymentDetail { get; set; }
         public DbSet<PaymentMethod> PaymentMethod { get; set; }
         public DbSet<PaymentTransaction> PaymentTransaction { get; set; }
+        public DbSet<Group> Group { get; set; }
         public DbSet<UserGroup> UserGroup { get; set; }
+        
 
 
     }
