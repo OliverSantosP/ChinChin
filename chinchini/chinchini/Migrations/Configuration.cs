@@ -22,7 +22,7 @@ namespace chinchini.Migrations
             //  to avoid creating duplicate seed data. E.g.
             //
 
-#if DEBUG
+
             // Delete the users
             //context.Database.ExecuteSqlCommand("DELETE FROM [AspNetUsers];");
             Models.ApplicationUser testUser = context.Users.Where(u => u.UserName == "donramon").FirstOrDefault();
@@ -36,7 +36,7 @@ namespace chinchini.Migrations
 
                 userManager.CreateAsync(testUser, "donramon").Wait();
             }
-#endif
+
 
             var user = testUser;
 
