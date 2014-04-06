@@ -8,25 +8,73 @@
 </div>
 <br />
 <br />
-@foreach (var item in Model)
-{
-    <div class="box">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <a href="/Project/Details/@item.ProjectID"><img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize" /></a>
-                    <div class="boxpad">
-                        <div class="boxpad">
-                            <p class="example-title">@item.Pitch.Name</p>
+@{
+    string ProjectType = "";
+    if (Request.QueryString["Type"]!=null)
+    {
+
+        if (Request.QueryString["Type"] == "Dona")
+        {
+            ProjectType = "2";
+        }
+        else
+        {
+            ProjectType = "1";
+        }
+
+        foreach (var item in Model)
+        {
+            if (item.ProjectTypeID.ToString() == ProjectType)
+            {
+                <div class="box">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="/Project/Details/@item.ProjectID"><img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize" /></a>
+                            <div class="boxpad">
+                                <div class="boxpad">
+                                    <p class="example-title">@item.Pitch.Name</p>
+                                </div>
+                            </div>
+                            <div class="descripcion">
+                                @item.ProjectType.Description
+                                <div class="progress">
+                                    @{float PercentageTotal = chinchini.Models.Project.GetPercentage(@item.ProjectID);}
+                                    <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
+                                </div>
+                                RD@{float Total = chinchini.Models.Project.GetLendTotal(@item.ProjectID); @String.Format("{0:C}", @Total);} de @item.Amount
+                            </div>
                         </div>
-                    </div>
-                    <div class="descripcion">@item.ProjectType.Description
-                        <div class="progress">
-                            @{float PercentageTotal = chinchini.Models.Project.GetPercentage(@item.ProjectID);}
-                            <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
-                        </div>
-                        RD@{float Total = chinchini.Models.Project.GetLendTotal(@item.ProjectID); @String.Format("{0:C}", @Total);} de @item.Amount
                     </div>
                 </div>
-            </div>
-        </div>
+            }
+        }
+
+
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+                <div class="box">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="/Project/Details/@item.ProjectID"><img src="http://www.cazurro.com/upload/fotoblog/FOTOBLOG__20101021_1287612135.jpg" class="resize" /></a>
+                            <div class="boxpad">
+                                <div class="boxpad">
+                                    <p class="example-title">@item.Pitch.Name</p>
+                                </div>
+                            </div>
+                            <div class="descripcion">
+                                @item.ProjectType.Description
+                                <div class="progress">
+                                    @{float PercentageTotal = chinchini.Models.Project.GetPercentage(@item.ProjectID);}
+                                    <div class="progress-bar progress-bar-success" style="width:@PercentageTotal%"></div>
+                                </div>
+                                RD@{float Total = chinchini.Models.Project.GetLendTotal(@item.ProjectID); @String.Format("{0:C}", @Total);} de @item.Amount
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        }
+    }
 }
