@@ -46,7 +46,7 @@ namespace chinchini.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nombre de Usuario")]
         public string UserName { get; set; }
 
         [Required]
@@ -59,5 +59,21 @@ namespace chinchini.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Nombres")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Apellidos")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Numero de Contacto")]
+        public string Phone { get; set; }
     }
 }
