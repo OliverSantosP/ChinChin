@@ -23,6 +23,7 @@ namespace chinchini.Models
         public int ReplyID { get; set; }
 
         public int PitchID { get; set; }
+        public string User_Id { get; set; }
 
         public virtual ApplicationUser User { get; set; }
         public virtual PitchComment ParentComment { get; set; }
