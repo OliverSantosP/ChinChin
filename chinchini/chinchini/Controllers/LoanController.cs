@@ -17,7 +17,7 @@ namespace chinchini.Controllers
         {
             var iid = Convert.ToInt32(id);
 
-            var loan = db.Loan.Where(l => l.LoanID == iid).First();
+            var loan = db.Loan.Include("Status").Where(l => l.LoanID == iid).FirstOrDefault();
 
             //ViewData["next_payment"] = loan.NextPayment();
 
@@ -30,7 +30,7 @@ namespace chinchini.Controllers
         {
             var iid = Convert.ToInt32(id);
 
-            var loan = db.Loan.Where(l => l.LoanID == iid).First();
+            var loan = db.Loan.Where(l => l.LoanID == iid).FirstOrDefault();
 
             ViewData["next_payment"] = loan.NextPayment();
 
@@ -40,16 +40,17 @@ namespace chinchini.Controllers
         //
         // POST: /Loan/Pay/id
         [HttpPost]
-        public ActionResult Pay(Payment id)
+        [ActionName("Pay")]
+        public ActionResult ProcessPay(string id)
         {
-            var iid = Convert.ToInt32(id.PaymentID);
+            var iid = Convert.ToInt32(id);
 
             var loan = db.Loan.Where(l => l.LoanID == iid).First();
 
             try
             {
                 loan.Pay();
-                return View("Details");
+                return View("Details", loan);
             }
             catch(Exception e)
             {

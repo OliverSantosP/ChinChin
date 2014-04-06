@@ -59,7 +59,8 @@ namespace chinchini.Migrations
               new Status { Description = "Test2" },
               new Status { Description = "Test3" },
               new Status { Description = "Test4" },
-              new Status { Description = "Pendiente" });
+              new Status { Description = "Pendiente" },
+              new Status { Description = "Pagado"});
 
             context.Category.AddOrUpdate(s => s.Name,
          new Category { Name = "Agricultura" },

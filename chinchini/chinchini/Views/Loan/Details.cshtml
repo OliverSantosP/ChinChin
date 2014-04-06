@@ -83,6 +83,41 @@
         </dd>
 
     </dl>
+    <table class="table">
+        <tr>
+            <th>
+                Numero de Pago
+            </th>
+            <th>
+                Monto de Pago
+            </th>
+            <th>
+                Fecha de Pago
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+        @{int i = 0;}
+        @using(Html.BeginForm("Pay", "Loan", FormMethod.Post)) {
+        foreach (var payments in Model.Payments.OrderBy(p => p.DueDate)) {
+            i = i + 1;
+        <tr>
+            <td>@i</td>
+            <td>@payments.Amount</td>
+            <td>@payments.DueDate</td>
+            @if (payments.Status.Description == "Pendiente")
+            {
+            <td><input name="id" value="@payments.PaymentID" title="Test" type="submit" class="btn btn-primary" /></td>
+            }
+            else
+            {
+            <td>@payments.Status.Description</td>
+            }        
+        </tr>
+        }
+        }
+    </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.LoanID }) |

@@ -87,6 +87,9 @@ namespace chinchini.Controllers
 
                 };
 
+                // Create first payment
+                project.Loan.Payments.Add(project.Loan.NextPayment());
+
 
                 db.Project.Add(project);
                 db.SaveChanges();

@@ -40,28 +40,40 @@ namespace chinchini.Models
 
         public Payment NextPayment()
         {
+            var db = new ApplicationDbContext();
+            var pending = db.Status.Where(s => s.Description == "Pendiente").FirstOrDefault();
+
             Payment payment = null;
+            Payment newPayment = null;
 
-            //payment = Payments.LastOrDefault(new Payment { Amount = this.Quota, Loan = this });
+            payment = Payments.OrderByDescending(p => p.DueDate).FirstOrDefault();
 
-            //if (payment.Status == "NOT PAID")
-            //{
+            if (payment == null)
+            {
+                newPayment = new Payment { Amount = this.Quota, DueDate = this.DateRequested.AddDays(this.PeriodDays), Loan = this, Status = pending};
+            }
+            else
+            {
+                newPayment = new Payment { Amount = this.Quota, DueDate = payment.DueDate.AddDays(this.PeriodDays), Loan = this, Status = pending};
+            }
 
-            //}
-
-            return payment;
+            return newPayment;
         }
 
         public void Pay()
         {
+            var db = new ApplicationDbContext();
+            var paid = db.Status.Where(s => s.Description == "Pagado").FirstOrDefault();
+
             // Validate stuff
             this.ValidateIntegrity();
 
-            var payment = new Payment();
-            payment.Amount = this.Amount;
-            payment.Loan = this;
+            var lastPayment = Payments.OrderByDescending(p => p.DueDate).FirstOrDefault();
+            lastPayment.Status = paid;
 
-            Payments.Add(payment);
+            var newPayment = this.NextPayment();
+
+            this.Payments.Add(newPayment);
         }
 
         public bool ValidateIntegrity()
