@@ -60,6 +60,13 @@ namespace chinchini.Migrations
               new Status { Description = "Test3" },
               new Status { Description = "Test4" });
 
+            context.Category.AddOrUpdate(s => s.Name,
+         new Category { Name = "Agricultura" },
+         new Category { Name = "Turismo" },
+         new Category { Name = "Educacion" },
+         new Category { Name = "Minorista" },
+         new Category { Name = "Salud" });
+
 
             //context.SaveChanges();
             var status = context.Status.FirstOrDefault();
@@ -104,7 +111,8 @@ namespace chinchini.Migrations
                     Amount = 10000,
                     Loan = loan1,
                     Pitch = pitch1,
-                    User_Id = user.Id
+                    User_Id = user.Id,
+                    CategoryID = 1
                 }
                 );
 
@@ -118,7 +126,7 @@ namespace chinchini.Migrations
             //    );
             //
 
-            
+
 
         }
     }

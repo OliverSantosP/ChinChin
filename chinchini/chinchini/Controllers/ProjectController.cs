@@ -43,6 +43,7 @@ namespace chinchini.Controllers
             //ViewBag.PitchID = new SelectList(db.Pitch, "PitchID", "Name");
             ViewBag.ProjectTypeID = new SelectList(db.ProjectType, "ProjectTypeID", "Description");
             ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description");
+            ViewBag.CategoryID = new SelectList(db.Category, "CategoryID", "Name");
             return View();
         }
 

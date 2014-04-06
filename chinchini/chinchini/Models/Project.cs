@@ -24,6 +24,10 @@ namespace chinchini.Models
         public int ProjectTypeID { get; set; }
         public int? LoanID { get; set; }
 
+        [ForeignKey("Category")]
+        public int CategoryID { get; set; }
+
+
         [ForeignKey("User")]
         public string User_Id { get; set; }
         
@@ -31,6 +35,7 @@ namespace chinchini.Models
         public virtual ApplicationUser User { get; set; }
         public virtual Pitch Pitch { get; set; }
         public virtual ProjectType ProjectType { get; set; }
+        public virtual Category Category { get; set; }
 
         public virtual Loan Loan { get; set; }
 

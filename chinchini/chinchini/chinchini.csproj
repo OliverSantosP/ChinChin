@@ -180,9 +180,18 @@
     <Compile Include="Migrations\201404060931318_AddGroupID-to-UserGroup.Designer.cs">
       <DependentUpon>201404060931318_AddGroupID-to-UserGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201404061117010_AddCategory.cs" />
+    <Compile Include="Migrations\201404061117010_AddCategory.Designer.cs">
+      <DependentUpon>201404061117010_AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404061122501_AddCategoryFieldToProject.cs" />
+    <Compile Include="Migrations\201404061122501_AddCategoryFieldToProject.Designer.cs">
+      <DependentUpon>201404061122501_AddCategoryFieldToProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationContext.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -313,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201404060931318_AddGroupID-to-UserGroup.resx">
       <DependentUpon>201404060931318_AddGroupID-to-UserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404061117010_AddCategory.resx">
+      <DependentUpon>201404061117010_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404061122501_AddCategoryFieldToProject.resx">
+      <DependentUpon>201404061122501_AddCategoryFieldToProject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
