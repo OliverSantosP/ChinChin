@@ -38,6 +38,11 @@ namespace chinchini.Models
             return payment;
         }
 
+        public Payment LastPayment()
+        {
+            return this.Payments.OrderByDescending(p => p.DueDate).FirstOrDefault();
+        }
+
         public Payment NextPayment()
         {
             var db = new ApplicationDbContext();
@@ -46,7 +51,7 @@ namespace chinchini.Models
             Payment payment = null;
             Payment newPayment = null;
 
-            payment = Payments.OrderByDescending(p => p.DueDate).FirstOrDefault();
+            payment = this.LastPayment();
 
             if (payment == null)
             {
@@ -68,7 +73,7 @@ namespace chinchini.Models
             // Validate stuff
             this.ValidateIntegrity();
 
-            var lastPayment = Payments.OrderByDescending(p => p.DueDate).FirstOrDefault();
+            var lastPayment = this.LastPayment();
             lastPayment.Status = paid;
 
             var newPayment = this.NextPayment();

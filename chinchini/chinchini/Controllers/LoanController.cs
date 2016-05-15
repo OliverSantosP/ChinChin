@@ -50,6 +50,7 @@ namespace chinchini.Controllers
             try
             {
                 loan.Pay();
+                db.SaveChanges();
                 return View("Details", loan);
             }
             catch(Exception e)

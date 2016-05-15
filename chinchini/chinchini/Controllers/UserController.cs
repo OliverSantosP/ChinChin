@@ -43,7 +43,7 @@ namespace chinchini.Controllers
         {
             var username = User.Identity.Name;
 
-            var projects = db.Project.Include("User").Include("Loan").Include("Pitch").Include("ProjectType").Include("Status").Where(p => p.User.UserName == username).AsEnumerable();
+            var projects = db.Project.Include("User").Include("Loan.Payments").Include("Pitch").Include("ProjectType").Include("Status").Where(p => p.User.UserName == username).AsEnumerable();
 
             return View(projects);
         }
